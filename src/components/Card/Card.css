@@ -1,0 +1,39 @@
+.main_card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.card{
+    width: 400px;
+    height: 93px;
+    border: 2px solid white;
+    display: grid;
+    grid-template-columns: .4fr .6fr;
+    position: relative;
+}
+.img {
+    overflow: hidden;
+}
+.img img{
+    width: 100%;
+}
+.grid2{
+    padding: 2px 0 0 5px;
+}
+.author{
+    display: none;
+}
+.date{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+@media screen and (max-width : 700px) {
+    .card{
+        grid-template-columns: 1fr;
+        height: fit-content;
+    }
+}
