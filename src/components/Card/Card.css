@@ -13,6 +13,13 @@
     grid-template-columns: .4fr .6fr;
     position: relative;
 }
+.title{
+    text-transform: capitalize;
+    font-weight: 800;
+}
+.content{
+    /* text-transform: capitalize; */
+}
 .img {
     overflow: hidden;
 }
@@ -21,6 +28,9 @@
 }
 .grid2{
     padding: 2px 0 0 5px;
+}
+.grid_3{
+    display: none;
 }
 .author{
     display: none;
@@ -32,8 +42,25 @@
 }
 
 @media screen and (max-width : 700px) {
+    .main_card{
+        margin: 20px 0;
+        gap: 20px;
+    }
     .card{
-        grid-template-columns: 1fr;
-        height: fit-content;
+        width: 90vw;
+        height: 150px;
+        grid-template-columns: .3fr .7fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 5px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid rgb(190, 190, 190);
+    }
+    .grid_3{
+        display: grid;
+        grid-column: 1/3;
+        overflow: hidden;
+    }
+    .img img{
+        height: 80px;
     }
 }

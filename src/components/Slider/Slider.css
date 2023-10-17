@@ -1,0 +1,45 @@
+.main_slider{
+    margin-bottom: 20px;
+}
+.swiper {
+    padding: 20px;
+    position: relative;
+    aspect-ratio: 2.6;
+}
+
+.slider_title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background: linear-gradient(45deg,transparent,black);
+}
+
+.swiper img {
+    width: 100vw;
+    aspect-ratio: 2.6;
+}
+
+@media screen and (max-width : 700px) {
+    .main_slider {
+        display: flex;
+    }
+    .slider_title {
+        position: absolute;
+        bottom: 2%;
+        left: 0;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width : 700px) {
+    .swiper{
+        width: 70vw;
+        margin-bottom: 20px
+    }
+    .swiper img {
+        width: 80vw;
+    }
+}
