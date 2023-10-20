@@ -1,0 +1,44 @@
+.category p {
+    color: blue;
+}
+
+.category_largeImg {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.category_largeImg>div {
+    width: 100%;
+    aspect-ratio: 1.77;
+}
+
+.category_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 15px;
+    border-bottom: 1px solid rgb(189, 186, 186);
+}
+
+.category_grid_img {
+    width: 100%;
+    aspect-ratio: 1.73;
+}
+
+.category_grid>div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.category_grid img {
+    width: 100%;
+}
+
+@media screen and (min-width : 1000px) {
+    .category_largeImg {
+        display: none;
+    }
+}

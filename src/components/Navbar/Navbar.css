@@ -6,12 +6,16 @@
     padding: 2px 10px;
     height: 38px;
     width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    box-shadow: 0 0 5px 3px black;
 }
 
 .nav {
     display: flex;
     align-items: center;
-    gap: 80px;
+    gap: 60px;
 }
 
 ul {

@@ -3,7 +3,7 @@ import './Navbar.css'
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Button, IconButton, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import ClearAllIcon from '@mui/icons-material/ClearAll';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
@@ -21,12 +21,13 @@ import EmojiFoodBeverageIcon from '@mui/icons-material/EmojiFoodBeverage';
 export default function Navbar() {
 
   const [openDrawer, setOpenDrawer] = useState(false)
+  const navigate = useNavigate()
 
   return (
     <div className='navbar'>
 
       <div className='nav'>
-        <h1>NEWSADDA</h1>
+        <h1 onClick={()=>{navigate("/")}}>NEWSADDA</h1>
 
         <div>
           <ul>

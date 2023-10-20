@@ -7,36 +7,33 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import pic from '../../assets/default.webp'
 import Slider from '../../components/Slider/Slider';
+import { fetchApiData } from '../../hooks/useFetch'
 
 export default function Homepage() {
 
-  const [data1, setData1] = useState(null)
   const [change, setChange] = useState('india')
 
-  const fetchData = async () => {
-    const { data } = await axios.get(`https://arya-kishan.github.io/JSON/${change}.json`)
-    console.log(data)
-    setData1(data.articles.slice(0, 50));
+  let { data, isLoading, isFetching, isError, error } = fetchApiData(change);
+  // console.log(data)
+  console.log("loading : " + isLoading + ", Fetching : " + isFetching)
+
+  // data = null;
+
+  if (isError) {
+    return <h1>{error}</h1>
   }
-
-
-
-  useEffect(() => {
-    fetchData();
-  }, [change])
-
 
   return (
     <>
 
       {
-        data1 ? (
+        data?.articles ? (
           <>
             <Typography variant='h4' borderBottom={'0'} textAlign={"center"} ><b>NEWS</b></Typography>
 
             <div className='homepage_grid'>
               {
-                data1?.slice(10, 15)?.map((e, i) => (
+                data?.articles?.slice(10, 15)?.map((e, i) => (
                   <div key={i}>
                     <Stack className='homepage_img'>
                       <LazyLoadImage
@@ -50,7 +47,7 @@ export default function Homepage() {
               }
             </div>
 
-            <Slider data={data1} />
+            <Slider data={data?.articles} />
 
             <div className='discover'>
               <div onClick={() => { setChange('health') }}>Health</div>
@@ -63,15 +60,27 @@ export default function Homepage() {
             </div>
 
 
-            <Card data={data1} />
+            <Card data={data?.articles} />
           </>
         ) : (
           <>
             <div className='other'>
               <div className='other_heading'></div>
+              <div className='other_homepage_grid'>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
               <div className='other_swiper'></div>
               <div className='other_discover'></div>
               <div className='other_card'>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
                 <div></div>
                 <div></div>
                 <div></div>

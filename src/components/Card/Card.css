@@ -7,19 +7,18 @@
 }
 .card{
     width: 400px;
-    height: 93px;
+    height: 98px;
     border: 2px solid white;
     display: grid;
     grid-template-columns: .4fr .6fr;
     position: relative;
+    overflow: hidden;
 }
 .title{
     text-transform: capitalize;
     font-weight: 800;
 }
-.content{
-    /* text-transform: capitalize; */
-}
+
 .img {
     overflow: hidden;
 }

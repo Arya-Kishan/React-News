@@ -14,7 +14,6 @@ export default function Card({ data }) {
     const navigate = useNavigate()
 
     const handleClick = (e) => {
-        console.log("hii")
         navigate("/detail")
         setNews(e)
     }
@@ -36,7 +35,7 @@ export default function Card({ data }) {
                         <div className='grid2'>
                             <Typography className='author'>{e.author}</Typography>
 
-                            <Typography variant='p' className='title'>{e.title?.split(" ").slice(0, 90).join(" ")}...</Typography>
+                            <Typography variant='p' className='title'>{e.title?.split(" ").slice(0, 20).join(" ")}...</Typography>
 
                             <Typography className='date'>{dayjs(e.publishedAt).format("MMM DD")}</Typography>
                         </div>

@@ -1,8 +1,8 @@
 .main_slider{
     margin-bottom: 20px;
+    width: 100%;  
 }
 .swiper {
-    padding: 20px;
     position: relative;
     aspect-ratio: 2.6;
 }
@@ -35,11 +35,14 @@
 }
 
 @media screen and (min-width : 700px) {
+    .main_slider{
+        aspect-ratio: 3.717;  
+    }
     .swiper{
         width: 70vw;
-        margin-bottom: 20px
+        margin-bottom: 20px;
     }
     .swiper img {
-        width: 80vw;
+        width: 100%;
     }
 }

@@ -5,6 +5,8 @@
     grid-template-rows: .5fr .5fr;
     gap: 10px;
     padding: 10px 20px 40px 20px;
+    width: 100%;
+    aspect-ratio: 3.463;
 }
 
 .homepage_img img {
@@ -14,9 +16,14 @@
 .homepage_grid>div:nth-child(1) {
     grid-row: 1/3;
 }
+.homepage_grid > div{
+    width: 100%;
+    aspect-ratio: 1.77;
+}
 
 .discover {
     background-color: blue;
+    height: 48px;
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -34,6 +41,8 @@
     text-align: center;
     color: white;
 }
+
+
 
 @media screen and (max-width : 700px) {
     .homepage_grid {
@@ -84,24 +93,64 @@
     }
 }
 
-.input {
-    height: 20vh;
-    width: 100%;
-    display: grid;
-    place-items: center;
-}
 
-input {
-    border: 2px solid blue;
-    font-size: 16px;
-    padding: 4px 8px;
-}
+@media screen and (min-width : 700px) {
 
-.home_plane {
-    position: fixed;
-    bottom: 2%;
-    right: 2%;
-    border: 2px solid blue;
-    border-radius: 50%;
-    background-color: white;
+    .other_heading {
+        margin-top: 5px;
+        width: 100vw;
+        height: 41px;
+        background-color: rgb(185, 184, 184);
+    }
+
+    .other_homepage_grid {
+        display: grid;
+        place-items: center;
+        grid-template-columns: 1.7fr .8fr .8fr;
+        grid-template-rows: .5fr .5fr;
+        gap: 10px;
+        padding: 10px 20px 40px 20px;
+    }
+    .other_homepage_grid > div{
+        background-color: rgb(185, 184, 184);
+        width: 100%;
+        aspect-ratio: 1.8;
+    }
+
+    .other_homepage_grid>div:nth-child(1) {
+        grid-row: 1/3;
+    }
+
+    .other_swiper {
+        width: 70vw;
+        aspect-ratio: 2.6;
+        background-color: rgb(185, 184, 184);;
+        margin: auto auto;
+        margin-bottom: 20px;
+    }
+
+    .other_discover {
+        width: 100vw;
+        height: 48px;
+        background-color: rgb(185, 184, 184);
+        margin-bottom: 20px;
+    }
+
+    .other_card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .other_card div {
+        width: 400px;
+        height: 98px;
+        grid-template-columns: .3fr .7fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 5px;
+        padding-bottom: 20px;
+        background-color: rgb(185, 184, 184);;
+    }
 }
