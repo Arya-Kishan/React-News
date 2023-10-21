@@ -8,13 +8,13 @@ import pic from '../../assets/default.webp'
 import { newsContext } from '../../Context';
 import { useNavigate } from 'react-router-dom'
 
-export default function Card({ data }) {
+export default function Card({ data, endpoint }) {
 
     const { news, setNews } = useContext(newsContext)
     const navigate = useNavigate()
 
-    const handleClick = (e) => {
-        navigate("/detail")
+    const handleClick = (e,i) => {
+        navigate(`/detail/${endpoint}/${i}`)
         setNews(e)
     }
 
@@ -22,7 +22,7 @@ export default function Card({ data }) {
         <div className='main_card'>
             {
                 data?.map((e, i) => (
-                    <div key={i} className='card' onClick={() => { handleClick(e) }}>
+                    <div key={i} className='card' onClick={() => { handleClick(e,i) }}>
 
                         <div className='grid1 img'>
                             <LazyLoadImage
@@ -33,15 +33,15 @@ export default function Card({ data }) {
                         </div>
 
                         <div className='grid2'>
-                            <Typography className='author'>{e.author}</Typography>
+                            <span className='author'>{e.author}</span>
 
-                            <Typography variant='p' className='title'>{e.title?.split(" ").slice(0, 20).join(" ")}...</Typography>
+                            <span className='title'>{e.title?.split(" ").slice(0, 20).join(" ")}...</span>
 
-                            <Typography className='date'>{dayjs(e.publishedAt).format("MMM DD")}</Typography>
+                            <span className='date'>{dayjs(e.publishedAt).format("MMM DD")}</span>
                         </div>
 
                         <div className="grid_3">
-                            <Typography variant='p' className='content'>{e.content?.split(" ").slice(0,20).join(" ")}...</Typography>
+                            <span className='content'>{e.content?.split(" ").slice(0,20).join(" ")}...</span>
                         </div>
 
                     </div>

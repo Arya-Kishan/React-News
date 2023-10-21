@@ -18,7 +18,7 @@ function App() {
           <Routes>
             <Route path='/' Component={Homepage} />
             <Route path='/category/:endpoint' Component={Category} />
-            <Route path='/detail' Component={Detail} />
+            <Route path='/detail/:endpoint/:id' Component={Detail} />
           </Routes>
         </Suspense>
       </BrowserRouter>

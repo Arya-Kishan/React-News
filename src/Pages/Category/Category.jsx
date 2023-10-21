@@ -3,7 +3,6 @@ import './Category.css'
 import { useParams } from 'react-router-dom'
 import Card from '../../components/Card/Card'
 import { Typography } from '@mui/material'
-import Slider from '../../components/Slider/Slider'
 import { fetchApiData } from '../../hooks/useFetch'
 import dayjs from 'dayjs'
 
@@ -48,7 +47,7 @@ export default function Category() {
       </div>
 
 
-      <Card data={data1?.articles} />
+      <Card data={data1?.articles} endpoint={endpoint}/>
 
 
     </div>
