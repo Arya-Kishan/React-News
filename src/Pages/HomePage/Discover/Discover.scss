@@ -1,0 +1,39 @@
+.discover {
+    background-color: blue;
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px 20px;
+    overflow-x: scroll;
+    margin-bottom: 20px;
+}
+
+.discover div {
+    cursor: pointer;
+    width: 100px;
+    padding: 3px 8px;
+    border: 2px solid rgb(6, 6, 192);
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+}
+
+.homepage_rounded {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    overflow-x: scroll;
+}
+
+.homepage_rounded>div {
+    width: 150px;
+    aspect-ratio: 1.77;
+}
+
+.homepage_rounded img {
+    width: 150px;
+    aspect-ratio: 1.77;
+    border-radius: 15px;
+}

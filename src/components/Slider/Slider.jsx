@@ -1,11 +1,8 @@
 import React from 'react'
 import { Scrollbar, Autoplay } from 'swiper/modules';
-import './Slider.css'
+import './Slider.scss'
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import { useNavigate } from 'react-router-dom';
 
@@ -27,7 +24,7 @@ export default function Slider({data}) {
                         <div>
                             {
                                 data.slice(0,6).map((e,i) => (
-                                    <SwiperSlide key={i} className='swiper' onClick={() => { handleNavigate(i) }}>
+                                    <SwiperSlide key={i} className='swiper'>
 
                                         <img src={e.urlToImage}/>
 

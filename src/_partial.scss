@@ -1,0 +1,28 @@
+@mixin flex($direction: row, $justify: center, $align: center, $gap: 0px) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+@mixin measure($height,$Width){
+    width: $Width;
+    height: $height;
+}
+
+@mixin padding($top,$right,$bottom,$left){
+    padding: $top,$right,$bottom,$left ;
+}
+
+@mixin margin($top,$right,$bottom,$left){
+    margin: $top,$right,$bottom,$left ;
+}
+
+@mixin position($pos,$top,$right,$bottom,$left){
+    position: $pos;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}

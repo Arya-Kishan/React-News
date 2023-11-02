@@ -1,33 +1,26 @@
-import React, { useState } from 'react'
-import './Navbar.css'
-import Drawer from '@mui/material/Drawer';
+import React, { Suspense, lazy, useState } from 'react'
+import './Navbar.scss'
+import { Link, useNavigate } from 'react-router-dom'
 import MenuIcon from '@mui/icons-material/Menu';
-import { Button, IconButton, Typography } from '@mui/material';
-import { Link, useNavigate } from 'react-router-dom';
-import ClearAllIcon from '@mui/icons-material/ClearAll';
-import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
-import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
-import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
-import ScienceIcon from '@mui/icons-material/Science';
-import DynamicFormIcon from '@mui/icons-material/DynamicForm';
-import AttractionsIcon from '@mui/icons-material/Attractions';
-import AirplayIcon from '@mui/icons-material/Airplay';
-import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
-import DiamondIcon from '@mui/icons-material/Diamond';
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
-import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
-import EmojiFoodBeverageIcon from '@mui/icons-material/EmojiFoodBeverage';
+const LeftDrawer = lazy(() => (import('./LeftDrawer')))
 
 export default function Navbar() {
 
-  const [openDrawer, setOpenDrawer] = useState(false)
+  const [show, setShow] = useState(false)
+
+
   const navigate = useNavigate()
+
+  const handleShow = () => {
+    console.log("clicked")
+    setShow(true)
+  }
 
   return (
     <div className='navbar'>
 
       <div className='nav'>
-        <h1 onClick={()=>{navigate("/")}}>NEWSADDA</h1>
+        <h1 onClick={() => { navigate("/") }}>NEWSADDA</h1>
 
         <div>
           <ul>
@@ -42,33 +35,12 @@ export default function Navbar() {
         </div>
       </div>
 
-      <IconButton onClick={() => { setOpenDrawer(true) }}>< MenuIcon /></IconButton>
+      <Suspense fallback={<h1></h1>} >
+        {show && <LeftDrawer show1={'true'} setShow={setShow} />}
+      </Suspense>
 
-      <Drawer
-        anchor={"left"}
-        open={openDrawer}
-        onClose={() => { setOpenDrawer(false) }}
-      >
+      <MenuIcon onClick={handleShow} />
 
-        <h4>ADDA</h4>
-
-        <div className='modal'>
-          <div onClick={() => { setOpenDrawer(false) }}><ClearAllIcon /><Link to="category/general">General</Link></div>
-          <div onClick={() => { setOpenDrawer(false) }}><BusinessCenterIcon /><Link to="category/business">Business</Link></div>
-          <div onClick={() => { setOpenDrawer(false) }}><HealthAndSafetyIcon /><Link to="category/health">Health</Link></div>
-          <div onClick={() => { setOpenDrawer(false) }}><FitnessCenterIcon /><Link to="category/sports">Sports</Link></div>
-          <div onClick={() => { setOpenDrawer(false) }}><ScienceIcon /><Link to="category/science">Science</Link></div>
-          <div onClick={() => { setOpenDrawer(false) }}><DynamicFormIcon /><Link to="category/technology">Technology</Link></div>
-          <div onClick={() => { setOpenDrawer(false) }}><AttractionsIcon /><Link to="category/entertainment">Entertainment</Link></div>
-          <div onClick={() => { setOpenDrawer(false) }}><AirplayIcon /><Link to="category/anime">Anime</Link></div>
-          <div onClick={() => { setOpenDrawer(false) }}><HistoryEduIcon /><Link to="category/education">Education</Link></div>
-          <div onClick={() => { setOpenDrawer(false) }}><DiamondIcon /><Link to="category/fashion">Fashion</Link></div>
-          <div onClick={() => { setOpenDrawer(false) }}><AttachMoneyIcon /><Link to="category/finance">Finance</Link></div>
-          <div onClick={() => { setOpenDrawer(false) }}><SportsEsportsIcon /><Link to="category/gaming">Gaming</Link></div>
-          <div onClick={() => { setOpenDrawer(false) }}><EmojiFoodBeverageIcon /><Link to="category/food">Food</Link></div>
-        </div>
-
-      </Drawer>
     </div>
   )
 }

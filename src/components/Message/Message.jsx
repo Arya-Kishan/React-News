@@ -36,7 +36,7 @@ export default function Message({ data, endpoint, id }) {
 
     return (
         <div>
-            <IconButton onClick={() => { handleGet() }}><ChatIcon /></IconButton>
+            <IconButton className='commentBtn' onClick={() => { handleGet() }}><ChatIcon /></IconButton>
 
             <Drawer
                 anchor={"bottom"}
@@ -52,7 +52,7 @@ export default function Message({ data, endpoint, id }) {
                                 {
                                     message?.userMessage.map((e, i) => (
                                         <div key={i} className='realComment'>
-                                            <div><AccountCircleIcon/></div>
+                                            <div><AccountCircleIcon/>User</div>
                                             <div>{e}</div>
                                         </div>
                                     ))

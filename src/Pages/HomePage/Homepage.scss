@@ -1,0 +1,128 @@
+@import '../../partial';
+
+
+.homepage_rounded {
+    display: none;
+}
+
+.homepage h4 {
+    border-bottom: 0;
+    margin-bottom: 0;
+}
+
+@media screen and (max-width : 700px) {
+
+    .other {
+        @include flex(column, flex-start, flex-start, 0px)
+    }
+
+    .other_heading {
+        @include measure(37px, 100vw);
+        background-color: rgb(192, 192, 192);
+        @include margin(4px, 0, 4px, 0);
+    }
+
+    .other_swiper {
+        width: 100vw;
+        aspect-ratio: 2.6;
+        background-color: rgb(192, 192, 192);
+        margin-bottom: 15px;
+    }
+
+    .other_discover {
+        @include measure(48px, 100vw);
+        background-color: rgb(192, 192, 192);
+        margin-bottom: 20px;
+    }
+
+    .other_rounded {
+        width: 100%;
+        overflow: scroll;
+
+        .extend_scroll {
+            @include flex(row, flex-start, flex-start, 10px);
+            width:500px;
+            padding: 10px;
+            overflow-x: scroll;
+
+            &>div {
+                width: 150px;
+                aspect-ratio: 1.77;
+                border-radius: 15px;
+                background-color: rgb(192, 192, 192);
+            }
+        }
+    }
+
+    .other_card {
+        @include flex(column, center, center, 20px);
+        margin-top: 20px;
+    }
+
+    .other_card div {
+        @include measure(150px, 90vw);
+        grid-template-columns: .3fr .7fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 5px;
+        padding-bottom: 20px;
+        background-color: rgb(192, 192, 192);
+    }
+}
+
+
+@media screen and (min-width : 700px) {
+
+    .other_heading {
+        @include measure(41px, 100vw);
+        margin-top: 5px;
+        background-color: rgb(185, 184, 184);
+    }
+
+    .other_homepage_grid {
+        display: grid;
+        place-items: center;
+        grid-template-columns: 1.7fr .8fr .8fr;
+        grid-template-rows: .5fr .5fr;
+        gap: 10px;
+        padding: 10px 20px 40px 20px;
+    }
+
+    .other_homepage_grid>div {
+        background-color: rgb(185, 184, 184);
+        width: 100%;
+        aspect-ratio: 1.8;
+    }
+
+    .other_homepage_grid>div:nth-child(1) {
+        grid-row: 1/3;
+    }
+
+    .other_swiper {
+        width: 70vw;
+        aspect-ratio: 2.6;
+        background-color: rgb(185, 184, 184);
+        margin: auto auto;
+        margin-bottom: 20px;
+    }
+
+    .other_discover {
+        @include measure(48px, 100vw);
+        background-color: rgb(185, 184, 184);
+        margin-bottom: 20px;
+    }
+
+    .other_card {
+        @include flex(row, center, center, 10px);
+        flex-wrap: wrap;
+    }
+
+    .other_card > div {
+        border: 2px solid red;
+        @include measure(98px, 400px);
+        grid-template-columns: .3fr .7fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 5px;
+        padding-bottom: 20px;
+        background-color: rgb(185, 184, 184);
+    }
+}
