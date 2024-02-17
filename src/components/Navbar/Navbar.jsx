@@ -39,7 +39,7 @@ export default function Navbar() {
         {show && <LeftDrawer show1={'true'} setShow={setShow} />}
       </Suspense>
 
-      <MenuIcon onClick={handleShow} />
+      <MenuIcon style={{color:"white"}} onClick={handleShow} />
 
     </div>
   )
